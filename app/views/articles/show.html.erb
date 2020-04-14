@@ -1,12 +1,24 @@
-<h1>Showing Article Details</h1>
+<h2 class="text-center" style="margin: 25px 0px 0px 0px;"><%= @article.title %></h2>
 
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-8 mt-5">
+          <div class="card text-center">
+            <div class="card-header">
+              Featured
+            </div>
+            <div class="card-body">
+            <div class="card-text text-left"><%= simple_format(@article.description) %></div>
+            <%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary" %>
+            <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
 
-<p><strong>Title:</strong> <%= @article.title %> </p>
-<p><strong>Title Description:</strong> <%= @article.description %></p>
-
-
-<p>
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %> |
-<%= link_to 'Return to Article Listing', articles_path %>
-</p>
+            
+          </div>
+          <div class="card-footer text-muted">
+            <small> Created <%= time_ago_in_words(@article.created_at)%> ago,
+            edited <%= time_ago_in_words(@article.updated_at)%> </small>
+          </div>
+          </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+
+.navbar {
+background-color:#01548A !important;
+
+}
+.navbar a{
+    color:white !important;
+
+}
+
+#logo {
+    float: left;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+  }
+  
+  #logo:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: black !important;
+}
+
+#links a{
+    color:black !important;
+}
+h1 {
+    color: black;
+}
+
+#jumbotron{
+    background-image: asset-url('jumbo-bg.jpg');
+    background-position: center center;
+    background-repeat: none;
+    background-size: cover;
+    color:white;
+    text-align:center;
+}
+
+
+/* Sticky Footer Classes */
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+  color: white;
+}
+
+/* Other Classes for Page Styling */
+
+body {
+  background: white;
+  
+}
