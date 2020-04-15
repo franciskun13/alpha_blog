@@ -38,9 +38,10 @@ h1 {
 
 #jumbotron{
     background-image: asset-url('jumbo-bg.jpg');
-    background-position: center center;
+    background-position: center top;
     background-repeat: none;
     background-size: cover;
+    height: 400px;
     color:white;
     text-align:center;
 }
