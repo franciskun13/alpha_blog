@@ -1,0 +1,7 @@
+<h2 class="text-center" style="margin: 25px 0px 25px 0px;"><%= @user.username %> profile</h2>
+
+<%= gravatar_for @user, size: 200 %>
+
+<h3 class="text-center" style="margin: 25px 0px 0px 0px;">Articles</h3>
+
+<%= render 'articles/article'  %>
