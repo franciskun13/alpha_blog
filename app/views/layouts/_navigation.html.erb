@@ -10,20 +10,46 @@
       <li class="nav-item">
         <a><%= link_to 'Bloggers', users_path, class: "nav-link" %></a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Articles
-        </a>
-        <div class="dropdown-menu" id="links" aria-labelledby="navbarDropdown">
-          <p><%= link_to 'Create New Article', new_article_path, class: "dropdown-item" %></p>
-          <p><%= link_to 'View All Article', articles_path, class: "dropdown-item" %></p>
-        </div>
-      </li>
-     
+      <% if logged_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Articles
+          </a>
+          
+          <div class="dropdown-menu" id="links" aria-labelledby="navbarDropdown">
+            <p><%= link_to 'New Article', new_article_path, class: "dropdown-item" %></p>
+            <p><%= link_to 'View Articles', articles_path, class: "dropdown-item" %></p>
+          </div>
+
+        </li>
+      <% end %>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    
+    <ul class="navbar-nav navbar-right">
+      <% if logged_in? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= current_user.username %>
+            </a>
+            <div class="dropdown-menu" id="links" aria-labelledby="navbarDropdown" style="margin-left: -60px !important;">
+              <p><%= link_to 'View Your Profile', user_path(current_user), class: "dropdown-item" %></p>
+              <p><%= link_to 'Edit Your Profile', edit_user_path(current_user), class: "dropdown-item" %></p>
+              <p><%= link_to 'Logout', logout_path, class: "dropdown-item", method: :delete %></p>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+          <a><%= link_to 'Login', login_path, class: "nav-link" %></a>
+          </li>
+          <li class="nav-item">
+          <a><%= link_to 'Signup', signup_path, class: "nav-link" %></a>
+          </li>
+      <% end %>
+    </ul>
+    
   </div>
   </nav>
