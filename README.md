@@ -1,3 +1,3 @@
 # README
 
-My First Ruby app as I learn it as a beginner
+My first Ruby app as I am learning through it as a beginner
