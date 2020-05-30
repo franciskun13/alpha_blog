@@ -22,14 +22,29 @@
           </div>
 
         </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categories
+          </a>
+          
+          <div class="dropdown-menu" id="links" aria-labelledby="navbarDropdown">
+            <p><%= link_to 'New Category', new_category_path, class: "dropdown-item" %></p>
+            <p><%= link_to 'View Categories', categories_path, class: "dropdown-item" %></p>
+          </div>
+
+        </li>
       <% end %>
+
+    </ul>
+    
+    <ul class="navbar-nav navbar-right">
+
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
-    </ul>
-    
-    <ul class="navbar-nav navbar-right">
+
       <% if logged_in? %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
